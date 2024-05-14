@@ -13,6 +13,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support import expected_conditions as EC
 
 
+
 def getLinks(inputSoup,baseUrl, searchSchedule):
     #### This searches the main link to gather the links for each of the regions ###
     stockingScheuduleSoup = inputSoup.find(id=searchSchedule) 
@@ -29,6 +30,7 @@ def getScheduleTablesFromSite(url,region):
     tableSoup = soup.find('table', attrs={'class':'table table-responsive table-bordered table-condensed table-hover table-striped'})
     rows = tableSoup.find_all('tr')
     data = []
+
     for row in rows:
         dataEntry = {}
         cols = row.find_all('td')
